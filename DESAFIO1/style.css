@@ -32,7 +32,7 @@ img {
 .container {
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 45px;
+    padding: 0 clamp(20px, 6vw, 45px);
 }
 
 .sr-only {
@@ -55,7 +55,7 @@ button:focus-visible {
 #menusuperior {
     background-color: var(--cor-escura);
     color: var(--cor-texto-claro);
-    padding: 45px 0 90px;
+    padding: clamp(32px, 8vw, 45px) 0 clamp(50px, 12vw, 90px);
 }
 
 .logo {
@@ -64,11 +64,11 @@ button:focus-visible {
     text-transform: uppercase;
     font-size: 14px;
     color: var(--cor-destaque);
-    margin-bottom: 55px;
+    margin-bottom: clamp(32px, 8vw, 55px);
 }
 
 #titulo-menusuperior {
-    font-size: 42px;
+    font-size: clamp(28px, 6vw, 42px);
     font-weight: 700;
     line-height: 1.15;
     max-width: 640px;
@@ -76,13 +76,16 @@ button:focus-visible {
 
 #txt-menusuperior {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: clamp(16px, 3.5vw, 20px);
     font-weight: 300;
     opacity: 0.85;
 }
 
 .btn-hero {
     display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
     margin-top: 40px;
     padding: 14px 30px;
     background-color: var(--cor-destaque);
@@ -102,7 +105,7 @@ button:focus-visible {
 /* MENU INFORMACIONAL */
 #menuinformacional {
     background-color: var(--cor-clara);
-    padding: 70px 0;
+    padding: clamp(45px, 10vw, 70px) 0;
 }
 
 .info-grid {
@@ -113,7 +116,7 @@ button:focus-visible {
 }
 
 .info-item h2 {
-    font-size: 44px;
+    font-size: clamp(30px, 6vw, 44px);
     font-weight: 700;
     color: var(--cor-destaque);
 }
@@ -130,25 +133,25 @@ button:focus-visible {
 
 /* DESCRIÇÃO */
 #descricao {
-    padding: 90px 0;
+    padding: clamp(50px, 12vw, 90px) 0;
 }
 
 .descricao-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: clamp(32px, 6vw, 60px);
     align-items: center;
 }
 
 #titulo-descricao {
-    font-size: 34px;
+    font-size: clamp(26px, 5vw, 34px);
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     line-height: 1.25;
 }
 
 #txt-descricao {
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
     font-weight: 300;
     color: #444;
 }
@@ -163,11 +166,11 @@ button:focus-visible {
     background-color: var(--cor-escura);
     color: var(--cor-texto-claro);
     text-align: center;
-    padding: 75px 0 90px;
+    padding: clamp(50px, 12vw, 75px) 0 clamp(60px, 14vw, 90px);
 }
 
 #titulo-formulario {
-    font-size: 26px;
+    font-size: clamp(21px, 4.5vw, 26px);
     font-weight: 700;
 }
 
@@ -226,14 +229,6 @@ button:hover {
 
 /* RESPONSIVO */
 @media (max-width: 860px) {
-    .container {
-        padding: 0 28px;
-    }
-
-    #titulo-menusuperior {
-        font-size: 32px;
-    }
-
     .descricao-grid {
         grid-template-columns: 1fr;
     }
@@ -244,8 +239,42 @@ button:hover {
 
     .info-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
         text-align: center;
+    }
+
+    .btn-hero {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        margin-bottom: 24px;
+    }
+
+    input,
+    button {
+        max-width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    #imagemexp img {
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    #titulo-menusuperior {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 0 16px;
     }
 }
 
